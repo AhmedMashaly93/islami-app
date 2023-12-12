@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: "Ahadeth",
                 backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "SETTINGS",
+                icon: Icon(Icons.settings), label: "SETTINGSS",
                 backgroundColor: Colors.transparent),
           ],
         ),
