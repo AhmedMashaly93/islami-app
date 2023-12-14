@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/tabs/Ahadeth.dart';
-import 'package:islami_app/tabs/Quran.dart';
 import 'package:islami_app/tabs/Radio.dart';
+import 'package:islami_app/tabs/Quran.dart';
+import 'package:islami_app/tabs/ahadeethTab.dart';
 import 'package:islami_app/tabs/Sebha.dart';
 import 'package:islami_app/tabs/Settings.dart';
 
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/quran.png")),
+                icon: ImageIcon(AssetImage("assets/images/al quran.png")),
                 label: "Quran",
                 backgroundColor: Colors.blueAccent),
             BottomNavigationBarItem(
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
                 label: "Radio", backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/al quran.png")),
+                icon: ImageIcon(AssetImage("assets/images/quran.png")),
                 label: "Ahadeth",
                 backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
@@ -61,5 +61,5 @@ class _HomeScreenState extends State<HomeScreen> {
       body:tabs[index], ),
     ]);
   }
-  List<Widget>tabs=[QuranTab(),SebhaTab(),AhadeethTab(),RadioTab(),SettingsTab()];
+  List<Widget>tabs=[QuranTab(),SebhaTab(),RadioTab(),AhadeethTab(),SettingsTab()];
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RadioTab extends StatelessWidget {
-  const RadioTab({super.key});
+  static const String routeName = "RadioTab";
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.amber);
+    return Scaffold();
   }
 }
