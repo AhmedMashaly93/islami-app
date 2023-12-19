@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/Sura-Details.dart';
 import 'package:islami_app/suraModel.dart';
+import 'package:islami_app/theme%20data.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> SuraName = [
@@ -128,7 +129,7 @@ class QuranTab extends StatelessWidget {
         children: [
           Image.asset("assets/images/quran_image.png"),
           Divider(
-            color: Colors.blueAccent,
+            color: MythemeData.Primary,
             thickness: 2,
           ),
           Text("Sura Names",
@@ -136,13 +137,13 @@ class QuranTab extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Divider(color: Colors.blueAccent, thickness: 2),
+          Divider(color: MythemeData.Primary, thickness: 2),
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) {
                 return Divider(
                   thickness: 1,
-                  color: Colors.black,
+                  color: MythemeData.Primary,
                   indent: 40,
                   endIndent: 40,
                 );

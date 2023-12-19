@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/suraModel.dart';
+import 'package:islami_app/theme%20data.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = "SuraDetails";
@@ -36,7 +37,7 @@ class _SuraDetailsState extends State<SuraDetails> {
             shape: OutlineInputBorder(borderRadius: BorderRadius.circular(18)),
             child: ListView.separated(
               separatorBuilder: (context, index) =>
-                  const Divider(thickness: 1,endIndent: 40,indent: 40),
+                  const Divider(thickness: 1,endIndent: 40,indent: 40,color:MythemeData.Primary ),
               itemBuilder: (context, index) {
                 return Directionality(
                   textDirection: TextDirection.rtl,

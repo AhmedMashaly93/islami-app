@@ -5,6 +5,7 @@ import 'package:islami_app/tabs/Quran.dart';
 import 'package:islami_app/tabs/ahadeethTab.dart';
 import 'package:islami_app/tabs/Sebha.dart';
 import 'package:islami_app/tabs/Settings.dart';
+import 'package:islami_app/theme%20data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: MythemeData.Primary,
           currentIndex: index,
           onTap: (value) {
             index = value;
@@ -42,20 +43,20 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/al quran.png")),
                 label: "Quran",
-                backgroundColor: Colors.blueAccent),
+                backgroundColor: MythemeData.Primary),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "Sebha", backgroundColor: Colors.transparent),
+                label: "Sebha", backgroundColor: MythemeData.Primary),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                label: "Radio", backgroundColor: Colors.transparent),
+                label: "Radio", backgroundColor: MythemeData.Primary),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/quran.png")),
                 label: "Ahadeth",
-                backgroundColor: Colors.transparent),
+                backgroundColor: MythemeData.Primary),
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: "SETTINGSS",
-                backgroundColor: Colors.transparent),
+                backgroundColor: MythemeData.Primary),
           ],
         ),
       body:tabs[index], ),

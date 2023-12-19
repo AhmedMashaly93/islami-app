@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/tabs/hadeethModel.dart';
+import 'package:islami_app/theme%20data.dart';
+
+import 'hadeethdetails.dart';
 
 class AhadeethTab extends StatefulWidget {
   static const String routeName = "AhadeethTab()";
@@ -15,33 +18,45 @@ class _AhadeethTabState extends State<AhadeethTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    Loadhadeeth();
+    return Scaffold(body: Center(
       child: Column(
         children: [
           Image.asset("assets/images/ahadeth_image.png"),
           Divider(
-            thickness: 3,
+            color: MythemeData.Primary,
+            thickness: 2,
           ),
           Text(
-            "الأحاديث",
-            style: GoogleFonts.aboreto(
-                fontSize: 30, fontWeight: FontWeight.w100, color: Colors.black),
+            "Ahadeeth",
+            style: GoogleFonts.elMessiri(
+                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           Divider(
-            thickness: 3,
+            color: MythemeData.Primary,
+            thickness: 2,
           ),
           Expanded(
             child: ListView.separated(
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) =>
+                  Divider(indent: 50, endIndent: 50, thickness: 1,color: MythemeData.Primary),
               itemBuilder: (BuildContext context, int index) {
-                return Text(ALLAHADEETH[index].title);
-
-              },itemCount: ALLAHADEETH.length,
+                return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, HadeethDetails.routename,
+                          arguments: ALLAHADEETH[index]);
+                    },
+                    child: Center(child: Text(ALLAHADEETH[index].title)));
+              },
+              itemCount: ALLAHADEETH.length,
             ),
           )
-        ],
-      ),
+        ]),
+    )
+
+
     );
+
   }
 
   Loadhadeeth() async {
@@ -55,7 +70,6 @@ class _AhadeethTabState extends State<AhadeethTab> {
       List<String> hadeethbody = hadeethonelines;
       HadeethModel Ahadeth = HadeethModel(hadeethTitle, hadeethbody);
       ALLAHADEETH.add(Ahadeth);
-
     }
     setState(() {});
   }
