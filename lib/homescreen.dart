@@ -6,7 +6,7 @@ import 'package:islami_app/tabs/ahadeethTab.dart';
 import 'package:islami_app/tabs/Sebha.dart';
 import 'package:islami_app/tabs/Settings.dart';
 import 'package:islami_app/theme%20data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Scaffold(
         appBar: AppBar(
           title: Text(
-            "إسلامي",
+            AppLocalizations.of(context)!.appTitle,
             style: GoogleFonts.elMessiri(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),

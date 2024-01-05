@@ -5,8 +5,13 @@ import 'package:islami_app/Sura-Details.dart';
 import 'package:islami_app/homescreen.dart';
 import 'package:islami_app/tabs/hadeethdetails.dart';
 import 'package:islami_app/theme%20data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {runApp( MaterialApp(
+  title: 'Localizations Sample App',
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  locale: Locale("ar"),
   debugShowCheckedModeBanner: false,
   initialRoute: HomeScreen.routeName,
   routes: {HomeScreen.routeName: (context) => HomeScreen(),

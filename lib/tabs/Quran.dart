@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/Sura-Details.dart';
 import 'package:islami_app/suraModel.dart';
 import 'package:islami_app/theme%20data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuranTab extends StatelessWidget {
   List<String> SuraName = [
     "الفاتحه",
@@ -132,7 +132,7 @@ class QuranTab extends StatelessWidget {
             color: MythemeData.Primary,
             thickness: 2,
           ),
-          Text("Sura Names",
+          Text(AppLocalizations.of(context)!.suraNames,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           SizedBox(
             height: 10,

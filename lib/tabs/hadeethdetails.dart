@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/tabs/hadeethModel.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadeethDetails extends StatelessWidget {
 static const String routename="HadeethDetails";
 

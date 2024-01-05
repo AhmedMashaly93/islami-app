@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/tabs/hadeethModel.dart';
 import 'package:islami_app/theme%20data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'hadeethdetails.dart';
 
 class AhadeethTab extends StatefulWidget {
-  static const String routeName = "AhadeethTab()";
+  static const String routeName = "AhadeethTab";
 
   @override
   State<AhadeethTab> createState() => _AhadeethTabState();
@@ -28,7 +28,7 @@ class _AhadeethTabState extends State<AhadeethTab> {
             thickness: 2,
           ),
           Text(
-            "Ahadeeth",
+            AppLocalizations.of(context)!.ahadeeth,
             style: GoogleFonts.elMessiri(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
