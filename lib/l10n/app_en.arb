@@ -1,6 +1,10 @@
 {
   "appTitle": "App Title",
   "suraNames": "Sura Names",
-  "ahadeeth": "Ahadeeth"
+  "ahadeeth": "Ahadeeth",
+  "english": "English",
+  "arabic": "Arabic",
+  "languages": "Languages",
+  "mode": "Mode"
 
 }

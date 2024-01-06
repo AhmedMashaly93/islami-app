@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/my-provider.dart';
 import 'package:islami_app/theme%20data.dart';
+import 'package:provider/provider.dart';
 
 import '../bottomsheets/show-lan-bottomsheet.dart';
 import '../theme data.dart';
 import '../theme data.dart';
 import '../theme data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
@@ -16,12 +19,13 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MYProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text("Languages"),
+          Text(AppLocalizations.of(context)!.languages),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             child: InkWell(
@@ -36,13 +40,15 @@ class _SettingsTabState extends State<SettingsTab> {
                     border: Border.all(color: MythemeData.Primary)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("English"),
+                  child: Text(pro.local == "en"
+                      ? AppLocalizations.of(context)!.english
+                      : AppLocalizations.of(context)!.arabic),
                 ),
               ),
             ),
           ),
           SizedBox(height: 18),
-          Text("Mode"),
+          Text(AppLocalizations.of(context)!.mode),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             child: InkWell(
@@ -69,16 +75,14 @@ class _SettingsTabState extends State<SettingsTab> {
 
   void ShowLangBottomsheet(context) {
     showModalBottomSheet(
-      context: context,
-      shape: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.transparent),
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(18), topLeft: Radius.circular(18))),
-      builder: (context) {
-        return LanguageBottomSheet();
-      }
-
-        ) ;
+        context: context,
+        shape: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.transparent),
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(18), topLeft: Radius.circular(18))),
+        builder: (context) {
+          return LanguageBottomSheet();
+        });
   }
 
   void ShowTHEMBottomsheet() {
